@@ -1,0 +1,30 @@
+[project]
+name = "hugging-face-dataset"
+version = "0.3.0"
+description = "Modular Hugging Face dataset image scraping pipeline → GCS"
+readme = "README.md"
+authors = [
+    { name = "Shyam-Eros", email = "shyam.sundhar@erosinvest.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=2.19.0",
+    "google-cloud-storage>=2.14.0",
+    "huggingface-hub>=0.23.0",
+    "pillow>=10.0.0",
+    "pyarrow>=15.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "tqdm>=4.66.0",
+]
+
+[project.scripts]
+pipeline = "hugging_face_dataset.cli:main"
+hugging-face-dataset = "hugging_face_dataset.cli:main"
+
+[tool.uv.build-backend]
+module-root = "src"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
